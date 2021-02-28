@@ -1,12 +1,20 @@
-FROM alpine:3.10
+# Dockerfile
+FROM node:12.13.0
+# set working directory
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/app
 
-RUN apk add --no-cache python3-dev \
-&& pip3 install --upgrade pip 
+# add .bin to $PATH
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
-WORKDIR /app
+# install package.json (o sea las dependencies)
+COPY package.json /usr/src/app/package.json
+RUN npm install
+RUN npm install -g @angular/cli@1.7.3 
 
-COPY . /app
+# add app
+COPY . /usr/src/app
 
-RUN pip3 --no-cache-dir install -r requeriments.txt 
+# start app
+CMD ng serve --host 0.0.0.0
 
-CMD ["python3", "app.py"]

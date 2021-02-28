@@ -1,0 +1,47 @@
+<!-- <p>Table is just a mapping of objects to table rows with <code>ngFor</code></p> -->
+
+  <div class="table-responsive">
+    <!-- <button type="button" class="btn btn-danger">OFF ALL</button> -->
+    <table class="table table-striped" style="border: 1px solid #d0d0d0; background-color: white; margin-bottom: 30px;">
+      <thead class="thead-dark">
+      <tr style="border:solid; border-color:#343a40;">
+        <!-- <th scope="col">#</th> -->
+        <th scope="col"><button type="button" class="btn btn-danger">OFF ALL</button></th>
+        <th scope="col">Orden ID</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Compra/Venta</th>
+        <th scope="col">Par de Divisas</th>
+        <th scope="col">Divisas Negociados</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Monto Orden</th>
+        <th scope="col">Cantidad de relleno</th>
+        <th scope="col">Tasa Orden</th>
+        <th scope="col">Tasa relleno</th> 
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let orden of ordenes; index as i" >
+        <!-- <th scope="row">{{ i + 1 }}</th> -->
+        <!-- <td>
+          <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+          {{ orden.tipo }}
+        </td> -->
+        <td>
+          <button type="button" style="font-size: 9px;margin-top: -7px;" class="btn btn-danger">OFF</button>
+        </td>
+        <td>{{ orden.ordenid }}</td>
+        <td>{{ orden.estado }}</td> 
+        <td style="color: green; font-weight: bold;">{{ orden.compraventa }}</td> 
+        <td>{{ orden.pardedivisas }}</td> 
+        <td>{{ orden.divisasnegociados }}</td> 
+        <td>{{ orden.tipo }}</td> 
+        <td>{{ orden.montoorden }}</td> 
+        <td>{{ orden.cantidadderelleno }}</td> 
+        <td>{{ orden.tasaorden }}</td> 
+        <td>{{ orden.tasaderelleno }}</td> 
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    
+

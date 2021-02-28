@@ -1,0 +1,53 @@
+
+<nav class="test navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="isLoggedIn$ | async as isLoggedIn">
+    <nav class="test 2 navbar navbar-light bg-dark">
+        <a class="navbar-brand" href="#">
+          <img  src="https://www.credicorpcapital.com/Imgenes%20Rebranding/Logos/responsive-lfooter.png" class="d-inline-block align-top" alt=""> 
+        </a>
+      </nav>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav nav navbar-nav pull-xs-right">
+         <li class="nav-item">
+          <a class="nav-link"  mat-button (click)="onLogout()" *ngIf="isLoggedIn" [routerLink]="['boletaorden']" routerLinkActive="active">Salir</a>
+        </li>    
+      </ul>
+    </div>
+  </nav>
+
+<nav class="nvbar2 navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="isLoggedIn$ | async as isLoggedIn">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav nav navbar-nav pull-xs-right">
+
+      <li class="nav-item">
+        <a style="font-weight: bold; font-size: 13px;">Usuario Actual: </a>
+        <a style="color: #ffffff; margin-right: 8px;font-size: 13px;">Client20</a>    
+      </li>
+
+      <div class="seperator" style="border-left:1px solid #000; width: 20px;">
+      </div>
+
+      <li class="nav-item">
+        <a style="font-weight: bold;font-size: 13px;">Organización: </a>
+        <a style="color: #ffffff; margin-right: 8px;font-size: 13px;" >1000Credicorp</a>
+      </li>
+
+      <div class="seperator" style="border-left:1px solid #000; width: 20px;">
+      </div>
+
+      <li class="nav-item">
+        <a style="font-size: 13px">Comercio Fecha: </a>
+        <a style="color: #ffffff; margin-right: 8px;font-size: 13px;"> 12/01/2021 Time: 14:10:19 UTC</a>
+      </li> 
+    </ul>
+  </div>
+</nav>
+
+<div style="background-color: #54565a;">
+  <router-outlet></router-outlet>
+</div>

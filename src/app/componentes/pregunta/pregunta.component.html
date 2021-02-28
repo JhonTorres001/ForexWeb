@@ -1,0 +1,14 @@
+ 
+   <ejs-grid #grid id='PagingGrid' [dataSource]='preguntas' (load)='load()' [allowPaging]='true' [allowFiltering]='true' height=490 [editSettings]='editSettings' [toolbar]='toolbar'  (actionBegin)='actionBegin($event)' (queryCellInfo)='tooltip($event)'>   
+         <e-columns>
+            <e-column field='id' headerText='Consecutivo' textAlign='Center' width=50 isPrimaryKey='true'></e-column>
+            <e-column field='question' edittype='textarea'  headerText='Pregunta' textAlign='left' width=90></e-column>
+            <e-column field='simple_question' headerText='Palabras Clave' textAlign='left' width=90></e-column>
+            <e-column field='answer' headerText='Respuestas' textAlign='left' width=90></e-column>
+            <e-column field='application_type' headerText='Tipo App' textAlign='left' width=90></e-column>
+            <e-column field='user_type' headerText='Tipo Usuario' textAlign='left' width=90></e-column>
+            <e-column field='status' editType='booleanedit'  headerText='Estado' width=60 type="boolean" displayAsCheckBox='true'></e-column> 
+           
+        </e-columns>
+    </ejs-grid>
+
